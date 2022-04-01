@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create Transfer table
+      author: Yunus Kazimov
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    unique: true
+                    nullable: true
+              - column:
+                  name: receiver_account_id
+                  type: varchar(128)
+              - column:
+                  name: sender_account_id
+                  type: varchar(128)
+              - column:
+                  name: transfer_amount
+                  type: numeric(19,6)
+              - column:
+                  name: created_at
+                  type: timestamp
+              - column:
+                  name: updated_at
+                  type: timestamp
+            schemaName: public
+            tableName: transfers
