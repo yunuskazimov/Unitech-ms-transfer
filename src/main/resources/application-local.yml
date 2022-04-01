@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    username: postgres
+    password: bGXRdGb3Ap
+    url: jdbc:postgresql://localhost:5432/unitech
+  jpa:
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+    properties:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+    enabled: true
+
+server:
+  port: 8043
+
+client:
+  users:
+    int:
+      url: http://localhost:8042/int/api/account/
+
+
